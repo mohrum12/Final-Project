@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aef93e767de415999a01cfddad297496 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed;
+                bottom: 50px; right: 50px; width: 200px; height: 120px;
+                background-color: white; border:2px solid grey; z-index:9999;
+                font-size:14px; padding: 10px">
+    <p><b>Overdose Rate per 100k</b></p>
+    <p><span style="color:darkred;">●</span> High (>40)</p>
+    <p><span style="color:orange;">●</span> Medium (25-40)</p>
+    <p><span style="color:green;">●</span> Low (<25)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_aef93e767de415999a01cfddad297496" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_aef93e767de415999a01cfddad297496 = L.map(
+                "map_aef93e767de415999a01cfddad297496",
+                {
+                    center: [40.7128, -74.006],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b4f88e8b27d25c2e20890a75f9ad4a75 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_b4f88e8b27d25c2e20890a75f9ad4a75.addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+            var circle_marker_1543d4771866e2330821faf2ac2593da = L.circleMarker(
+                [40.8448, -73.8648],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.040000000000003, "stroke": true, "weight": 2}
+            ).addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+        var popup_2e132dfe6305c77b030ab637bf3a6caf = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_824e0ff331f1d3bd635165e64f074a79 = $(`<div id="html_824e0ff331f1d3bd635165e64f074a79" style="width: 100.0%; height: 100.0%;"><b>BRONX</b><br>Avg Overdose Rate: 55.1/100k<br>Naloxone Programs: 3.1/100k<br>Population: 1,472,654</div>`)[0];
+                popup_2e132dfe6305c77b030ab637bf3a6caf.setContent(html_824e0ff331f1d3bd635165e64f074a79);
+            
+        
+
+        circle_marker_1543d4771866e2330821faf2ac2593da.bindPopup(popup_2e132dfe6305c77b030ab637bf3a6caf)
+        ;
+
+        
+    
+    
+            var marker_97c8bb41088b0871bd7585ff1715e0f2 = L.marker(
+                [40.8448, -73.8648],
+                {}
+            ).addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+            var div_icon_71c483ff7f2a830c39a5f86fb664bdd9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold; color: black;\"\u003eBRONX\u003c/div\u003e"});
+            marker_97c8bb41088b0871bd7585ff1715e0f2.setIcon(div_icon_71c483ff7f2a830c39a5f86fb664bdd9);
+        
+    
+            var circle_marker_494a968364f8ac9821acd3cf9825352c = L.circleMarker(
+                [40.7831, -73.9712],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.440000000000001, "stroke": true, "weight": 2}
+            ).addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+        var popup_e390cf0c589a29480936b91d263d50ca = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_8ec5eac0b7606cd5cf79d329341f4acb = $(`<div id="html_8ec5eac0b7606cd5cf79d329341f4acb" style="width: 100.0%; height: 100.0%;"><b>MANHATTAN</b><br>Avg Overdose Rate: 26.1/100k<br>Naloxone Programs: 4.0/100k<br>Population: 1,694,251</div>`)[0];
+                popup_e390cf0c589a29480936b91d263d50ca.setContent(html_8ec5eac0b7606cd5cf79d329341f4acb);
+            
+        
+
+        circle_marker_494a968364f8ac9821acd3cf9825352c.bindPopup(popup_e390cf0c589a29480936b91d263d50ca)
+        ;
+
+        
+    
+    
+            var marker_aebec0572783b14046078676a5d8ebd6 = L.marker(
+                [40.7831, -73.9712],
+                {}
+            ).addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+            var div_icon_d191a56832f3775e74a072a87cdeb2b8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold; color: black;\"\u003eMANHATTAN\u003c/div\u003e"});
+            marker_aebec0572783b14046078676a5d8ebd6.setIcon(div_icon_d191a56832f3775e74a072a87cdeb2b8);
+        
+    
+            var circle_marker_c2e659f2659e6cd5960168a501b192ea = L.circleMarker(
+                [40.7282, -73.7949],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.920000000000001, "stroke": true, "weight": 2}
+            ).addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+        var popup_321c96f452ee5b2f184f1aa4ea18be90 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_b39131281a93ffdbf6e8e632d2c3ce4a = $(`<div id="html_b39131281a93ffdbf6e8e632d2c3ce4a" style="width: 100.0%; height: 100.0%;"><b>QUEENS</b><br>Avg Overdose Rate: 19.8/100k<br>Naloxone Programs: 1.6/100k<br>Population: 2,405,464</div>`)[0];
+                popup_321c96f452ee5b2f184f1aa4ea18be90.setContent(html_b39131281a93ffdbf6e8e632d2c3ce4a);
+            
+        
+
+        circle_marker_c2e659f2659e6cd5960168a501b192ea.bindPopup(popup_321c96f452ee5b2f184f1aa4ea18be90)
+        ;
+
+        
+    
+    
+            var marker_cce117a17002234a8ba47427ec82b57e = L.marker(
+                [40.7282, -73.7949],
+                {}
+            ).addTo(map_aef93e767de415999a01cfddad297496);
+        
+    
+            var div_icon_5ca0c4b4072f9220ccff0d04321efb44 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10pt; font-weight: bold; color: black;\"\u003eQUEENS\u003c/div\u003e"});
+            marker_cce117a17002234a8ba47427ec82b57e.setIcon(div_icon_5ca0c4b4072f9220ccff0d04321efb44);
+        
+</script>
+</html>
